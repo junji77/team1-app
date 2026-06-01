@@ -4,7 +4,9 @@
 
 <br>
 
-## 🎯 프로젝트 목표
+---
+
+## 1.  프로젝트 목표
 
 - 수강신청 트래픽 집중 상황 대응
 - Kubernetes 기반 자동 확장
@@ -14,8 +16,10 @@
 
 <br>
 
-## 🌿 브랜치 전략 & PR 규칙
-### 💬 커밋 컨벤션
+---
+
+## 2. 브랜치 전략 & PR 규칙
+### 2-1. 커밋 컨벤션
 
 | Prefix | 용도 |
 | --- | --- |
@@ -25,28 +29,33 @@
 | `chore` | 빌드 업무 수정, 패키지 매니저 설정, 의존성 변경 |
 | `docs` | 문서 및 주석 수정 |
 
-### 🔍 PR(Pull Request) 가이드라인
+<br>
 
-1. `feature/*` ──▶ `develop` 방향으로만 PR 생성
+### 2-2. PR 가이드라인
+
+1. `feature/*` → `develop` 방향으로만 PR 생성
 2. PR 제목 형식: `[Prefix] 작업 내용` (예: `[feat] 강의 검색 API 구현`)
 3. PR 본문 필수 항목 (무엇을/왜/어떻게, 영향 범위, 테스트 결과)
 4. 인프라 변경 PR(`infra` 레포)은 `terraform plan` 결과 본문 첨부 필수
-5. 팀원 1인 이상 리뷰 후 approve ──▶ merge (approve 없이 merge 금지)
+5. 팀원 1인 이상 리뷰 후 approve → merge (approve 없이 merge 금지)
 
-### 📌 브랜치 구조 및 배포 책임
-### 브랜치 구조
+<br>
+
+### 2-3. 브랜치 구조 및 배포 책임
 
 ```
 main
  └── develop
       └── feature/이름/기능명     # 예: feature/yueun/subject_search
 ```
-* `feature/*` ──▶ `develop` 방향으로만 PR 생성
+* `feature/*` → `develop` 방향으로만 PR 생성
 * CI는 App 레포, CD는 Config 레포로 책임 분리 (GitOps 표준)
 
 <br>
 
-## 📎 레포지토리
+---
+
+## 3. 레포지토리
 
 | 구분 | URL |
 | --- | --- |
@@ -56,7 +65,9 @@ main
 
 <br>
 
-## 🏗️ 아키텍처 개요
+---
+
+## 4.️ 아키텍처 개요
 
 ```
 [ 외부 트래픽 분리 구조 (Traffic Flow) ]
@@ -87,7 +98,11 @@ k6 (부하 발생기) ──▶ ALB ──▶ Spring Boot Pods
                                    ▼
                        Prometheus & Grafana (대시보드 모니터링)
 ```
-## CI/CD 파이프라인
+
+<br>
+
+--- 
+## 5. CI/CD 파이프라인
 
 **CI 흐름 (App 레포)**
 
@@ -146,9 +161,13 @@ Amazon EKS
 Running Pod
 
 ```
+
 <br>
 
-## 🛠️ 기술 스택
+
+--- 
+
+## 6. 기술 스택
 
 ### Application
 
@@ -179,7 +198,9 @@ Running Pod
 
 <br>
 
-## 📁 레포지토리 구조
+--- 
+
+## 7.  레포지토리 구조
 
 ### team1-app (App 레포)
 
@@ -231,22 +252,27 @@ src/
 
 <br>
 
-## 👥 팀원
+---
 
-| 이름 | 담당 |
-| --- | --- |
-| 정지찬 | 백엔드/프론트엔드 개발, 모니터링 (Prometheus, Grafana, k6) |
-| 이유은 | 백엔드/프론트엔드 개발, Terraform IaC |
-| 김우연 | 백엔드/프론트엔드 개발, Kubernetes 매니페스트 |
-| 배성민 | Terraform IaC, Kubernetes 매니페스트 |
-| 전지훈 | CI/CD GitOps (GitHub Actions, ArgoCD) |
-| 이윤범 | CI/CD GitOps (GitHub Actions, ArgoCD) |
-| 유준영 | 모니터링 (CloudWatch, k6 부하테스트) |
+## 8. 팀원
+
+| 이름  | 담당                                           |
+|-----|----------------------------------------------|
+| 공통  | 페이지 기획, API 설계, DB 설계                        |
+| 정지찬 | 백엔드 개발, 모니터링 (Prometheus, Grafana), k6 부하테스트 |
+| 이유은 | 백엔드 개발, 프론트엔드 연결, Terraform IaC, KEDA        |
+| 김우연 | 백엔드 개발, Kubernetes 매니페스트                     |
+| 배성민 | Terraform IaC, Kubernetes 매니페스트              |
+| 전지훈 | CI/CD GitOps (GitHub Actions, ArgoCD)        |
+| 이윤범 | CI/CD GitOps (GitHub Actions, ArgoCD)        |
+| 유준영 | 모니터링 (Prometheus, Grafana), k6 부하테스트         |
 
 <br>
 
 
-## 🔐 환경 변수
+---
+
+## 9. 환경 변수
 
 | 변수 | 설명 |
 |--------|--------|
@@ -255,6 +281,8 @@ src/
 | `DB_PASSWORD` | 데이터베이스 비밀번호 |
 | `JWT_SECRET` | JWT 토큰 서명 키 |
 | `SPRING_PROFILES_ACTIVE` | 실행 환경(dev, prod) |
+
+<br>
 
 ### Secret 관리
 
@@ -273,27 +301,5 @@ External Secret
 Kubernetes Secret
         ↓
 Spring Boot Pod
-```
-
-
-## 📋 프로젝트 진행 흐름
-
-```
-주제 확정
-    → 레포 분리 설계 (App / Config / Infra)
-    → 역할 분담
-    → Spring Boot 컨테이너화 점검 + Dockerfile 멀티스테이지 정비
-    → Terraform 모듈 작성 (VPC / EKS / RDS / ECR / IAM)
-       + S3 + DynamoDB Backend 구성
-    → EKS 클러스터 생성 + ALB Controller / Gateway API 설정
-    → k8s 매니페스트 작성 (Deployment / Service / HTTPRoute / HPA)
-    → GitHub Actions CI 구성
-       (OIDC → ECR Push → Config 레포 image tag 갱신)
-    → PR 테스트 워크플로우 구성
-       (PR 생성 시 단위 + Testcontainers 통합 테스트 자동 실행)
-    → ArgoCD 설치 → Application 등록 → Config 레포 추적 시작
-    → 서비스 검증 + k6 부하 테스트
-    → AWS 아키텍처 다이어그램 정리
-    → 산출물 정리 → 제출 → 발표
 ```
 
