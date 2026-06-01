@@ -55,13 +55,13 @@ main
 
 ---
 
-## 3. 레포지토리
+## 📎 레포지토리
 
-| 구분 | URL |
-| --- | --- |
-| App (소스코드) | https://github.com/CLD-05/team1-app |
-| Config (GitOps 매니페스트) | https://github.com/CLD-05/team1-config |
-| Infra (Terraform IaC) | https://github.com/CLD-05/team1-infra |
+| 구분 | 역할 | URL |
+| --- | --- | --- |
+| App (소스코드) | Spring Boot 기반 수강신청 서비스 개발, 비즈니스 로직 구현 및 CI 파이프라인 관리 | https://github.com/CLD-05/team1-app |
+| Config (GitOps 매니페스트) | Kubernetes 매니페스트, Kustomize Overlay, ArgoCD 기반 GitOps 배포 관리 | https://github.com/CLD-05/team1-config |
+| Infra (Terraform IaC) | AWS 인프라(EKS, VPC, RDS, ECR 등) 구축 및 운영 관리 | https://github.com/CLD-05/team1-infra |
 
 <br>
 
