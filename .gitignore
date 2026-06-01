@@ -1,16 +1,7 @@
-# Compiled class file
+# ===========================
+# Java / Compiled
+# ===========================
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
 *.nar
@@ -18,67 +9,100 @@
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
 
+# ===========================
+# Spring Boot / Maven
+# ===========================
+target/
+HELP.md
+!/.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# OS (MAC / Windows)
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-.Thumbs.db
-Thumbs.db
-$RECYCLE.BIN/
+# ===========================
+# Spring 로컬 환경 설정
+# ===========================
+application-local.yml
+application-dev.yml
+application-secret.yml
 
-
-# IntelliJ IDEA
+# ===========================
+# IDE - IntelliJ IDEA
+# ===========================
 .idea/
 *.iml
 *.iws
 *.ipr
 out/
 
-# Eclipse / STS
+# ===========================
+# IDE - Eclipse / STS
+# ===========================
 .metadata/
-bin/
-*.classpath
-*.project
+.apt_generated
+.classpath
+.factorypath
+.project
 .settings/
-*.ext
 .springBeans
+.sts4-cache
+*.ext
+bin/
 
+# ===========================
+# IDE - NetBeans
+# ===========================
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# Spring Boot / Java (App Repo)
-target/
+# ===========================
+# IDE - VS Code
+# ===========================
+.vscode/
 
+# ===========================
+# OS - macOS / Windows
+# ===========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+$RECYCLE.BIN/
 
-# Maven Wrapper JAR는 예외
-!/.mvn/wrapper/maven-wrapper.jar
-
-
-# Terraform & AWS (Config/Infra Repo)
-.terraform/
-*.tfstate
-*.tfstate.backup
-
-# 테라폼 변수 파일 (비밀번호 등 자격증명 유출 방지)
-*.tfvars
-*.tfvars.json
-
-# AWS CLI 및 인증 관련
-.aws/
-kubeconfig
-
-
-# Secrets & Environment
+# ===========================
+# Secrets & Credentials
+# ===========================
 .env
 .env.*
 secrets.yml
-application-secret.yml
 *.pem
 credentials
+.aws/
+
+# ===========================
+# Docker
+# ===========================
+docker-compose.override.yml
+
+# ===========================
+# Log
+# ===========================
+*.log
+*.ctxt
+.mtj.tmp/
+
+# ===========================
+# Docs (로컬 전용)
+# ===========================
+/docs
