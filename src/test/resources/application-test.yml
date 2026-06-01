@@ -1,7 +1,0 @@
-spring:
-  flyway:
-    baseline-on-migrate: false
-
-logging:
-  level:
-    org.hibernate.SQL: DEBUG
