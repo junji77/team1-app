@@ -1,5 +1,41 @@
 # 대규모 트래픽 대응을 위한 EKS 기반 수강신청 시스템 구축
 
+> **Portfolio Fork Notice**
+>
+> 이 저장소는 CLD-05 조직에서 7인 팀으로 진행한 수강신청 시스템 프로젝트의 포트폴리오용 Fork입니다.
+> 전체 프로젝트 중 CI/CD 및 GitOps 파이프라인의 설계와 구성을 담당했습니다.
+
+## Project Overview
+
+동시 접속자가 집중되는 수강신청 서비스에 대응하기 위해 Amazon EKS와 KEDA를 적용한 클라우드 네이티브 프로젝트입니다.
+
+## My Contributions
+
+- App / Config / Infra 3-Repository GitOps 구조 제안
+- GitHub Actions CI/CD 파이프라인 구성
+- 애플리케이션 빌드 및 테스트 자동화
+- Git SHA 기반 Docker 이미지 생성
+- OIDC 기반 Amazon ECR Push
+- Config 저장소 이미지 태그 자동 갱신
+- ArgoCD 자동 동기화 구성
+- Kustomize 기반 dev/prod 환경 분리
+- 배포 및 롤백 절차 문서화
+
+## Related Repositories
+
+- App: https://github.com/junji77/team1-app
+- Config: https://github.com/junji77/team1-config
+- Infra: https://github.com/junji77/team1-infra
+
+## Demo
+
+- 실사용 테스트: https://drive.google.com/file/d/1x1_t2vnO8OrTB5Haa17Yj3X5_Lf3cLJl/view
+- Pod 증설 전: https://drive.google.com/file/d/1oewzxvg1Vof74WHvZ_Bbc794jUo_wWcH/view
+- Pod 증설 후: https://drive.google.com/file/d/1tgV3cMRsD2SJR5iz2PiD2wGXRos56SsU/view
+
+---
+(아래는 기존 설명)
+
 > Terraform 기반 인프라 자동화(IaC), GitHub Actions·ArgoCD 기반 GitOps 배포 파이프라인, Kubernetes 오토스케일링(KEDA/HPA)을 적용하여 안정적인 수강신청 서비스를 구축하고 k6 부하 테스트를 통해 성능과 가용성을 검증한 프로젝트
 
 <br>
